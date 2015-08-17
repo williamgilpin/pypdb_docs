@@ -1,0 +1,1082 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to PyPDB’s documentation! &mdash; PyPDB 1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="PyPDB 1.0 documentation" href="#" />
+    <link rel="next" title="pypdb module" href="pypdb.html" />
+   
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+
+  </head>
+  <body role="document">
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="pypdb.html" title="pypdb module"
+             accesskey="N">next</a> |</li>
+        <li class="nav-item nav-item-0"><a href="#">PyPDB 1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-pypdb-s-documentation">
+<h1>Welcome to PyPDB&#8217;s documentation!<a class="headerlink" href="#welcome-to-pypdb-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="pypdb.html">pypdb module</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pypdb.html#pypdb-a-python-api-for-the-rcsb-protein-data-bank">PyPDB: A Python API for the RCSB Protein Data Bank</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<span class="target" id="module-pypdb"></span><div class="section" id="pypdb-a-python-api-for-the-rcsb-protein-data-bank">
+<h2>PyPDB: A Python API for the RCSB Protein Data Bank<a class="headerlink" href="#pypdb-a-python-api-for-the-rcsb-protein-data-bank" title="Permalink to this headline">¶</a></h2>
+<p>GitHub: <a class="reference external" href="https://github.com/williamgilpin/pypdb">https://github.com/williamgilpin/pypdb</a></p>
+<p>ReadTheDocs: xxx</p>
+<p>PyPI: <a class="reference external" href="https://pypi.python.org/pypi/pypdb">https://pypi.python.org/pypi/pypdb</a></p>
+<p>William Gilpin, 2015
+Please heed the license accompanying this file.</p>
+<dl class="function">
+<dt id="pypdb.describe_chemical">
+<code class="descclassname">pypdb.</code><code class="descname">describe_chemical</code><span class="sig-paren">(</span><em>chem_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.describe_chemical" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>chem_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string representing the full chemical sequence of interest (ie, NAG)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing the chemical description associated with the PDB ID</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">chem_desc</span> <span class="o">=</span> <span class="n">describe_chemical</span><span class="p">(</span><span class="s">&#39;NAG&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">chem_desc</span><span class="p">)</span>
+<span class="go">{&#39;describeHet&#39;: {&#39;ligandInfo&#39;: {&#39;ligand&#39;: {&#39;@molecularWeight&#39;: &#39;221.208&#39;, </span>
+<span class="go">&#39;InChIKey&#39;: &#39;OVRNDRQMDRJTHS-FMDGEEDCSA-N&#39;, &#39;@type&#39;: &#39;D-saccharide&#39;, </span>
+<span class="go">&#39;chemicalName&#39;: &#39;N-ACETYL-D-GLUCOSAMINE&#39;, &#39;@chemicalID&#39;: &#39;NAG&#39;, </span>
+<span class="go">&#39;smiles&#39;: &#39;CC(=O)N[C@@H]1[C@H]([C@@H]([C@H](O[C@H]1O)CO)O)O&#39;, &#39;</span>
+<span class="go">InChI&#39;: &#39;InChI=1S/C8H15NO6/c1-3(11)9-5-7(13)6(12)4(2-10)15-8(5)14/</span>
+<span class="go">h4-8,10,12-14H,2H2,1H3,(H,9,11)/t4-,5-,6-,7-,8-/m1/s1&#39;, </span>
+<span class="go">&#39;formula&#39;: &#39;C8 H15 N O6&#39;}}}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.describe_pdb">
+<code class="descclassname">pypdb.</code><code class="descname">describe_pdb</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.describe_pdb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get description and metadata of a PDB entry</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : string</p>
+<blockquote class="last">
+<div><p>A text pdb description from PDB</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">describe_pdb</span><span class="p">(</span><span class="s">&#39;4lza&#39;</span><span class="p">)</span>
+<span class="go">{&#39;citation_authors&#39;: &#39;Malashkevich, V.N., Bhosle, R., Toro, R., Hillerich, B., Gizzi, A., Garforth, S., Kar, A., Chan, M.K., Lafluer, J., Patel, H., Matikainen, B., Chamala, S., Lim, S., Celikgil, A., Villegas, G., Evans, B., Love, J., Fiser, A., Khafizov, K., Seidel, R., Bonanno, J.B., Almo, S.C.&#39;,</span>
+<span class="go"> &#39;deposition_date&#39;: &#39;2013-07-31&#39;,</span>
+<span class="go"> &#39;expMethod&#39;: &#39;X-RAY DIFFRACTION&#39;,</span>
+<span class="go"> &#39;keywords&#39;: &#39;TRANSFERASE&#39;,</span>
+<span class="go"> &#39;last_modification_date&#39;: &#39;2013-08-14&#39;,</span>
+<span class="go"> &#39;nr_atoms&#39;: &#39;0&#39;,</span>
+<span class="go"> &#39;nr_entities&#39;: &#39;1&#39;,</span>
+<span class="go"> &#39;nr_residues&#39;: &#39;390&#39;,</span>
+<span class="go"> &#39;release_date&#39;: &#39;2013-08-14&#39;,</span>
+<span class="go"> &#39;resolution&#39;: &#39;1.84&#39;,</span>
+<span class="go"> &#39;status&#39;: &#39;CURRENT&#39;,</span>
+<span class="go"> &#39;structureId&#39;: &#39;4LZA&#39;,</span>
+<span class="go"> &#39;structure_authors&#39;: &#39;Malashkevich, V.N., Bhosle, R., Toro, R., Hillerich, B., Gizzi, A., Garforth, S., Kar, A., Chan, M.K., Lafluer, J., Patel, H., Matikainen, B., Chamala, S., Lim, S., Celikgil, A., Villegas, G., Evans, B., Love, J., Fiser, A., Khafizov, K., Seidel, R., Bonanno, J.B., Almo, S.C., New York Structural Genomics Research Consortium (NYSGRC)&#39;,</span>
+<span class="go"> &#39;title&#39;: &#39;Crystal structure of adenine phosphoribosyltransferase from Thermoanaerobacter pseudethanolicus ATCC 33223, NYSGRC Target 029700.&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.do_protsym_search">
+<code class="descclassname">pypdb.</code><code class="descname">do_protsym_search</code><span class="sig-paren">(</span><em>point_group</em>, <em>min_rmsd=0.0</em>, <em>max_rmsd=7.0</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.do_protsym_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a protein symmetry search of the PDB</p>
+<p>This function can search the Protein Data Bank based on how closely entries
+match the user-specified symmetry group</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>point_group</strong> : str</p>
+<blockquote>
+<div><p>The name of the symmetry point group to search. This includes all the standard
+abbreviations for symmetry point groups (e.g., C1, C2, D2, T, O, I, H, A1)</p>
+</div></blockquote>
+<p><strong>min_rmsd</strong> : float</p>
+<blockquote>
+<div><p>The smallest allowed total deviation (in Angstroms) for a result to be classified
+as having a matching symmetry</p>
+</div></blockquote>
+<p><strong>max_rmsd</strong> : float</p>
+<blockquote>
+<div><p>The largest allowed total deviation (in Angstroms) for a result to be classified
+as having a matching symmetry</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>idlist</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>A list of PDB IDs resulting from the search</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">kk</span> <span class="o">=</span> <span class="n">do_protsym_search2</span><span class="p">(</span><span class="s">&#39;C9&#39;</span><span class="p">,</span> <span class="n">min_rmsd</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">max_rmsd</span><span class="o">=</span><span class="mf">1.0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">kk</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="go">[&#39;1KZU&#39;, &#39;1NKZ&#39;, &#39;2FKW&#39;, &#39;3B8M&#39;, &#39;3B8N&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.do_search">
+<code class="descclassname">pypdb.</code><code class="descname">do_search</code><span class="sig-paren">(</span><em>scan_params</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.do_search" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert dict() to XML object for searching</p>
+<p>This function takes a valid query dict() object, converts it to XML,
+and then sends a request to the PDB for a list of IDs corresponding to search results</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>scan_params</strong> : dict</p>
+<blockquote>
+<div><p>A dictionary of query attributes to use for
+the search of the PDB</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>idlist</strong> : list</p>
+<blockquote class="last">
+<div><p>A list of PDB ids returned by the search</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.find_authors">
+<code class="descclassname">pypdb.</code><code class="descname">find_authors</code><span class="sig-paren">(</span><em>search_term</em>, <em>max_results=100</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.find_authors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an ordered list of the top authors returned by a keyword search of
+the RCSB PDB</p>
+<p>This function is based on the number of unique PDB entries a given author has
+his or her name associated with, and not author order or the ranking of the 
+entry in the keyword search results. So if an author tends to publish on topics
+related to the search_term a lot, even if those papers are not the best match for 
+the exact search, he or she will have priority in this function over an author 
+who wrote the one paper that is most relevant to the search term. For the latter
+option, just do a standard keyword search using do_search.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>search_term</strong> : str</p>
+<blockquote>
+<div><p>The search keyword</p>
+</div></blockquote>
+<p><strong>max_results</strong> : int</p>
+<blockquote>
+<div><p>The maximum number of results to return</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><strong>out</strong> : list of str</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">top_authors</span> <span class="o">=</span> <span class="n">find_authors</span><span class="p">(</span><span class="s">&#39;crispr&#39;</span><span class="p">,</span><span class="n">max_results</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">top_authors</span><span class="p">[:</span><span class="mi">10</span><span class="p">])</span>
+<span class="go">[&#39;Doudna, J.A.&#39;, &#39;Jinek, M.&#39;, &#39;Ke, A.&#39;, &#39;Li, H.&#39;, &#39;Nam, K.H.&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.find_dates">
+<code class="descclassname">pypdb.</code><code class="descname">find_dates</code><span class="sig-paren">(</span><em>search_term</em>, <em>max_results=100</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.find_dates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an ordered list of the PDB submission dates returned by a 
+keyword search of the RCSB PDB. This can be used to assess the
+popularity of a gievne keyword or topic</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>search_term</strong> : str</p>
+<blockquote>
+<div><p>The search keyword</p>
+</div></blockquote>
+<p><strong>max_results</strong> : int</p>
+<blockquote>
+<div><p>The maximum number of results to return</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>all_dates</strong> : list of str</p>
+<blockquote class="last">
+<div><p>A list of calendar strings associated with the search term, these can
+be converted directly into time or datetime objects</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.find_papers">
+<code class="descclassname">pypdb.</code><code class="descname">find_papers</code><span class="sig-paren">(</span><em>search_term</em>, <em>max_results=100</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.find_papers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an ordered list of the top papers returned by a keyword search of
+the RCSB PDB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>search_term</strong> : str</p>
+<blockquote>
+<div><p>The search keyword</p>
+</div></blockquote>
+<p><strong>max_results</strong> : int</p>
+<blockquote>
+<div><p>The maximum number of results to return</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>all_papers</strong> : list of strings</p>
+<blockquote class="last">
+<div><p>A descending-order list containing the top papers associated with
+the search term in the PDB</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">matching_papers</span> <span class="o">=</span> <span class="n">find_papers</span><span class="p">(</span><span class="s">&#39;crispr&#39;</span><span class="p">,</span><span class="n">max_results</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">matching_papers</span><span class="p">)</span>
+<span class="go">[&#39;Crystal structure of a CRISPR-associated protein from thermus thermophilus&#39;, </span>
+<span class="go">&#39;CRYSTAL STRUCTURE OF HYPOTHETICAL PROTEIN SSO1404 FROM SULFOLOBUS SOLFATARICUS P2&#39;, </span>
+<span class="go">&#39;NMR solution structure of a CRISPR repeat binding protein&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.find_results_gen">
+<code class="descclassname">pypdb.</code><code class="descname">find_results_gen</code><span class="sig-paren">(</span><em>search_term</em>, <em>field='title'</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.find_results_gen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a generator of the results returned by a search of
+the protein data bank. This generator</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>search_term</strong> : str</p>
+<blockquote>
+<div><p>The search keyword</p>
+</div></blockquote>
+<p><strong>field</strong> : str</p>
+<blockquote class="last">
+<div><p>The type of information to record about each entry</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_all">
+<code class="descclassname">pypdb.</code><code class="descname">get_all</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a list of all PDB entries currently in the RCSB Protein Data Bank</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list of str</p>
+<blockquote class="last">
+<div><p>A list of all of the PDB IDs currently in the RCSB PDB</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_all_info">
+<code class="descclassname">pypdb.</code><code class="descname">get_all_info</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_all_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>A wrapper for get_info that cleans up the output slighly</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing all the information stored in the entry</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">all_info</span> <span class="o">=</span> <span class="n">get_all_info</span><span class="p">(</span><span class="s">&#39;4lza&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">all_info</span><span class="p">)</span>
+<span class="go">{&#39;polymer&#39;: {&#39;macroMolecule&#39;: {&#39;@name&#39;: &#39;Adenine phosphoribosyltransferase&#39;, &#39;</span>
+<span class="go">accession&#39;: {&#39;@id&#39;: &#39;B0K969&#39;}}, &#39;@entityNr&#39;: &#39;1&#39;, &#39;@type&#39;: &#39;protein&#39;, </span>
+<span class="go">&#39;polymerDescription&#39;: {&#39;@description&#39;: &#39;Adenine phosphoribosyltransferase&#39;}, </span>
+<span class="go">&#39;synonym&#39;: {&#39;@name&#39;: &#39;APRT&#39;}, &#39;@length&#39;: &#39;195&#39;, &#39;enzClass&#39;: {&#39;@ec&#39;: &#39;2.4.2.7&#39;}, </span>
+<span class="go">&#39;chain&#39;: [{&#39;@id&#39;: &#39;A&#39;}, {&#39;@id&#39;: &#39;B&#39;}], </span>
+<span class="go">&#39;Taxonomy&#39;: {&#39;@name&#39;: &#39;Thermoanaerobacter pseudethanolicus ATCC 33223&#39;, </span>
+<span class="go">&#39;@id&#39;: &#39;340099&#39;}, &#39;@weight&#39;: &#39;22023.9&#39;}, &#39;id&#39;: &#39;4LZA&#39;}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">get_all_info</span><span class="p">(</span><span class="s">&#39;2F5N&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first_polymer</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="s">&#39;polymer&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">first_polymer</span><span class="p">[</span><span class="s">&#39;polymerDescription&#39;</span><span class="p">]</span>
+<span class="go">{&#39;@description&#39;: &quot;5&#39;-D(*AP*GP*GP*TP*AP*GP*AP*CP*CP*TP*GP*GP*AP*CP*GP*C)-3&#39;&quot;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_blast">
+<code class="descclassname">pypdb.</code><code class="descname">get_blast</code><span class="sig-paren">(</span><em>pdb_id</em>, <em>chain_id='A'</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return BLAST search results for a given PDB ID
+The key of the output dict())that outputs the full search results is 
+&#8216;BlastOutput_iterations&#8217;</p>
+<p>To get a list of just the results without the metadata of the search use:
+hits = full_results[&#8216;BlastOutput_iterations&#8217;][&#8216;Iteration&#8217;][&#8216;Iteration_hits&#8217;][&#8216;Hit&#8217;]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+<p><strong>chain_id</strong> : string</p>
+<blockquote>
+<div><p>A single character designating the chain ID of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict()</p>
+<blockquote class="last">
+<div><p>A nested dict() consisting of the BLAST search results and all associated metadata
+If you just want the hits, look under four levels of keys:
+results[&#8216;BlastOutput_iterations&#8217;][&#8216;Iteration&#8217;][&#8216;Iteration_hits&#8217;][&#8216;Hit&#8217;]</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">blast_results</span> <span class="o">=</span> <span class="n">get_blast</span><span class="p">(</span><span class="s">&#39;2F5N&#39;</span><span class="p">,</span> <span class="n">chain_id</span><span class="o">=</span><span class="s">&#39;A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">just_hits</span> <span class="o">=</span> <span class="n">blast_results</span><span class="p">[</span><span class="s">&#39;BlastOutput_iterations&#39;</span><span class="p">][</span><span class="s">&#39;Iteration&#39;</span><span class="p">][</span><span class="s">&#39;Iteration_hits&#39;</span><span class="p">][</span><span class="s">&#39;Hit&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">just_hits</span><span class="p">[</span><span class="mi">50</span><span class="p">][</span><span class="s">&#39;Hit_hsps&#39;</span><span class="p">][</span><span class="s">&#39;Hsp&#39;</span><span class="p">][</span><span class="s">&#39;Hsp_hseq&#39;</span><span class="p">])</span>
+<span class="go">PELPEVETVRRELEKRIVGQKIISIEATYPRMVL--TGFEQLKKELTGKTIQGISRRGKYLIFEIGDDFRLISHLRMEGKYRLATLDAPREKHDHL</span>
+<span class="go">TMKFADG-QLIYADVRKFGTWELISTDQVLPYFLKKKIGPEPTYEDFDEKLFREKLRKSTKKIKPYLLEQTLVAGLGNIYVDEVLWLAKIHPEKET</span>
+<span class="go">NQLIESSIHLLHDSIIEILQKAIKLGGSSIRTY-SALGSTGKMQNELQVYGKTGEKCSRCGAEIQKIKVAGRGTHFCPVCQQ</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_blast2">
+<code class="descclassname">pypdb.</code><code class="descname">get_blast2</code><span class="sig-paren">(</span><em>pdb_id</em>, <em>chain_id='A'</em>, <em>output_form='HTML'</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_blast2" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Alternative way to look up BLAST for a given PDB ID. This function is a wrapper</dt>
+<dd>for get_raw_blast and parse_blast</dd>
+</dl>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+<dl class="docutils">
+<dt>chain_id <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">A single character designating the chain ID of interest</p>
+</dd>
+<dt>output_form <span class="classifier-delimiter">:</span> <span class="classifier">string</span></dt>
+<dd><p class="first last">TXT, HTML, or XML formatting of the BLAST page</p>
+</dd>
+</dl>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : 2-tuple</p>
+<blockquote class="last">
+<div><p>A tuple consisting of a list of PDB matches, and a list
+of their alignment text files (unformatted)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="docutils">
+<dt>&#8216;)</dt>
+<dd><div class="first last highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">blast_results</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">Total Results: 84</span>
+<span class="go">&lt;pre&gt;</span>
+<span class="go">&amp;gt;&lt;a name=&quot;45354&quot;&gt;&lt;/a&gt;2F5P:3:A|pdbid|entity|chain(s)|sequence</span>
+<span class="go">          Length = 274</span>
+<span class="go"> Score =  545 bits (1404), Expect = e-155,   Method: Composition-based stats.</span>
+<span class="go"> Identities = 274/274 (100%), Positives = 274/274 (100%)</span>
+<span class="go">Query: 1   MPELPEVETIRRTLLPLIVGKTIEDVRIFWPNIIRHPRDSEAFAARMIGQTVRGLERRGK 60</span>
+<span class="go">           MPELPEVETIRRTLLPLIVGKTIEDVRIFWPNIIRHPRDSEAFAARMIGQTVRGLERRGK</span>
+<span class="go">Sbjct: 1   MPELPEVETIRRTLLPLIVGKTIEDVRIFWPNIIRHPRDSEAFAARMIGQTVRGLERRGK 60</span>
+<span class="gp">...</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_clusters">
+<code class="descclassname">pypdb.</code><code class="descname">get_clusters</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_clusters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return cluster related web services of given PDB_ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing the representative clusters for the specified PDB ID</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">clusts</span> <span class="o">=</span> <span class="n">get_clusters</span><span class="p">(</span><span class="s">&#39;4hhb.A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">clusts</span><span class="p">)</span>
+<span class="go">{&#39;pdbChain&#39;: {&#39;@name&#39;: &#39;2W72.A&#39;}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_entity_info">
+<code class="descclassname">pypdb.</code><code class="descname">get_entity_info</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_entity_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return pdb id information</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing a description the entry</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">get_entity_info</span><span class="p">(</span><span class="s">&#39;4lza&#39;</span><span class="p">)</span>
+<span class="go">    {&#39;Entity&#39;: {&#39;@id&#39;: &#39;1&#39;,</span>
+<span class="go">  &#39;@type&#39;: &#39;protein&#39;,</span>
+<span class="go">  &#39;Chain&#39;: [{&#39;@id&#39;: &#39;A&#39;}, {&#39;@id&#39;: &#39;B&#39;}]},</span>
+<span class="go"> &#39;Method&#39;: {&#39;@name&#39;: &#39;xray&#39;},</span>
+<span class="go"> &#39;bioAssemblies&#39;: &#39;1&#39;,</span>
+<span class="go"> &#39;release_date&#39;: &#39;Wed Aug 14 00:00:00 PDT 2013&#39;,</span>
+<span class="go"> &#39;resolution&#39;: &#39;1.84&#39;,</span>
+<span class="go"> &#39;structureId&#39;: &#39;4lza&#39;}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_gene_onto">
+<code class="descclassname">pypdb.</code><code class="descname">get_gene_onto</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_gene_onto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return ligands of given PDB_ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing the gene ontology information associated with the entry</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">gene_info</span> <span class="o">=</span> <span class="n">get_gene_onto</span><span class="p">(</span><span class="s">&#39;4Z0L&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">gene_info</span><span class="p">[</span><span class="s">&#39;term&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+<span class="go">{&#39;@chainId&#39;: &#39;A&#39;,</span>
+<span class="go"> &#39;@id&#39;: &#39;GO:0001516&#39;,</span>
+<span class="go"> &#39;@structureId&#39;: &#39;4Z0L&#39;,</span>
+<span class="go"> &#39;detail&#39;: {&#39;@definition&#39;: &#39;The chemical reactions and pathways resulting &#39;</span>
+<span class="go">                           &#39;in the formation of prostaglandins, any of a &#39;</span>
+<span class="go">                           &#39;group of biologically active metabolites which &#39;</span>
+<span class="go">                           &#39;contain a cyclopentane ring.&#39;,</span>
+<span class="go">            &#39;@name&#39;: &#39;prostaglandin biosynthetic process&#39;,</span>
+<span class="go">            &#39;@ontology&#39;: &#39;B&#39;,</span>
+<span class="go">            &#39;@synonyms&#39;: &#39;prostaglandin anabolism, prostaglandin &#39;</span>
+<span class="go">                         &#39;biosynthesis, prostaglandin formation, &#39;</span>
+<span class="go">                         &#39;prostaglandin synthesis&#39;}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_info">
+<code class="descclassname">pypdb.</code><code class="descname">get_info</code><span class="sig-paren">(</span><em>pdb_id</em>, <em>url_root='http://www.rcsb.org/pdb/rest/describeMol?structureId='</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up all information about a given PDB ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+<p><strong>url_root</strong> : string</p>
+<blockquote>
+<div><p>The string root of the specific url for the request type</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : OrderedDict</p>
+<blockquote class="last">
+<div><p>An ordered dictionary object corresponding to bare xml</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_ligands">
+<code class="descclassname">pypdb.</code><code class="descname">get_ligands</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_ligands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return ligands of given PDB ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing a list of ligands associated with the entry</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">ligand_dict</span> <span class="o">=</span> <span class="n">get_ligands</span><span class="p">(</span><span class="s">&#39;100D&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">ligand_dict</span><span class="p">)</span>
+<span class="go">{&#39;id&#39;: &#39;100D&#39;,</span>
+<span class="go">&#39;ligandInfo&#39;: {&#39;ligand&#39;: {&#39;@chemicalID&#39;: &#39;SPM&#39;,</span>
+<span class="go">                       &#39;@molecularWeight&#39;: &#39;202.34&#39;,</span>
+<span class="go">                       &#39;@structureId&#39;: &#39;100D&#39;,</span>
+<span class="go">                       &#39;@type&#39;: &#39;non-polymer&#39;,</span>
+<span class="go">                       &#39;InChI&#39;: &#39;InChI=1S/C10H26N4/c11-5-3-9-13-7-1-2-8-14-10-4-6-12/h13-14H,1-12H2&#39;,</span>
+<span class="go">                       &#39;InChIKey&#39;: &#39;PFNFFQXMRSDOHW-UHFFFAOYSA-N&#39;,</span>
+<span class="go">                       &#39;chemicalName&#39;: &#39;SPERMINE&#39;,</span>
+<span class="go">                       &#39;formula&#39;: &#39;C10 H26 N4&#39;,</span>
+<span class="go">                       &#39;smiles&#39;: &#39;C(CCNCCCN)CNCCCN&#39;}}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_pdb_file">
+<code class="descclassname">pypdb.</code><code class="descname">get_pdb_file</code><span class="sig-paren">(</span><em>pdb_id</em>, <em>filetype='pdb'</em>, <em>compression=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_pdb_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the full PDB file associated with a PDB_ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+<p><strong>filetype: string</strong></p>
+<blockquote>
+<div><p>The file type. 
+&#8216;pdb&#8217; is the older file format, 
+&#8216;cif&#8217; is the newer replacement.
+&#8216;xml&#8217; an also be obtained and parsed using the various xml tools included in PyPDB
+&#8216;structfact&#8217; is a test file containing structure information for certain entries</p>
+</div></blockquote>
+<p><strong>compression</strong> : bool</p>
+<blockquote>
+<div><p>Retrieve a compressed (gz) version of the file</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>result</strong> : string</p>
+<blockquote>
+<div><p>The string representing the full PDB file in the given format</p>
+</div></blockquote>
+<p class="last"><a class="reference external" href="http://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=structfact&amp;structureId=2F5N">http://www.rcsb.org/pdb/download/downloadFile.do?fileFormat=structfact&amp;structureId=2F5N</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pdb_file</span> <span class="o">=</span> <span class="n">get_pdb_file</span><span class="p">(</span><span class="s">&#39;4lza&#39;</span><span class="p">,</span> <span class="n">filetype</span><span class="o">=</span><span class="s">&#39;cif&#39;</span><span class="p">,</span> <span class="n">compression</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">pdb_file</span><span class="p">[:</span><span class="mi">200</span><span class="p">])</span>
+<span class="go">data_4LZA</span>
+<span class="go"># </span>
+<span class="go">_entry.id   4LZA </span>
+<span class="go"># </span>
+<span class="go">_audit_conform.dict_name       mmcif_pdbx.dic </span>
+<span class="go">_audit_conform.dict_version    4.032 </span>
+<span class="go">_audit_conform.dict_location   http://mmcif.pdb.org/dictionaries/ascii/mmcif_pdbx</span>
+</pre></div>
+</div>
+<p>DEV NOTE:
+<a class="reference external" href="http://www.rcsb.org/pdb/files/2F5N.pdb1.gz">http://www.rcsb.org/pdb/files/2F5N.pdb1.gz</a></p>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_pfam">
+<code class="descclassname">pypdb.</code><code class="descname">get_pfam</code><span class="sig-paren">(</span><em>pdb_id</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_pfam" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return PFAM annotations of given PDB_ID</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing the PFAM annotations for the specified PDB ID</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">pfam_info</span> <span class="o">=</span> <span class="n">get_pfam</span><span class="p">(</span><span class="s">&#39;2LME&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">pfam_info</span><span class="p">)</span>
+<span class="go">{&#39;pfamHit&#39;: {&#39;@pfamAcc&#39;: &#39;PF03895.10&#39;, &#39;@pfamName&#39;: &#39;YadA_anchor&#39;, </span>
+<span class="go">&#39;@structureId&#39;: &#39;2LME&#39;, &#39;@pdbResNumEnd&#39;: &#39;105&#39;, &#39;@pdbResNumStart&#39;: &#39;28&#39;, </span>
+<span class="go">&#39;@pfamDesc&#39;: &#39;YadA-like C-terminal region&#39;, &#39;@eValue&#39;: &#39;5.0E-22&#39;, &#39;@chainId&#39;: &#39;A&#39;}}</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_raw_blast">
+<code class="descclassname">pypdb.</code><code class="descname">get_raw_blast</code><span class="sig-paren">(</span><em>pdb_id</em>, <em>output_form='HTML'</em>, <em>chain_id='A'</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_raw_blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Look up full BLAST page for a given PDB ID</p>
+<p>get_blast() uses this function internally</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id</strong> : string</p>
+<blockquote>
+<div><p>A 4 character string giving a pdb entry of interest</p>
+</div></blockquote>
+<p><strong>chain_id</strong> : string</p>
+<blockquote>
+<div><p>A single character designating the chain ID of interest</p>
+</div></blockquote>
+<p><strong>output_form</strong> : string</p>
+<blockquote>
+<div><p>TXT, HTML, or XML formatting of the outputs</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : OrderedDict</p>
+<blockquote class="last">
+<div><p>An ordered dictionary object corresponding to bare xml</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.get_seq_cluster">
+<code class="descclassname">pypdb.</code><code class="descname">get_seq_cluster</code><span class="sig-paren">(</span><em>pdb_id_chain</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.get_seq_cluster" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the sequence cluster of a PDB ID plus a pdb_id plus a chain,</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>pdb_id_chain</strong> : string</p>
+<blockquote>
+<div><p>A string denoting a 4 character PDB ID plus a one character chain
+offset with a dot: XXXX.X, as in 2F5N.A</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary containing the sequence cluster associated with the PDB 
+entry and chain</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">sclust</span> <span class="o">=</span> <span class="n">get_seq_cluster</span><span class="p">(</span><span class="s">&#39;2F5N.A&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">sclust</span><span class="p">[</span><span class="s">&#39;pdbChain&#39;</span><span class="p">][:</span><span class="mi">10</span><span class="p">])</span>
+<span class="go">[{&#39;@name&#39;: &#39;4PD2.A&#39;, &#39;@rank&#39;: &#39;1&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;3U6P.A&#39;, &#39;@rank&#39;: &#39;2&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;4PCZ.A&#39;, &#39;@rank&#39;: &#39;3&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;3GPU.A&#39;, &#39;@rank&#39;: &#39;4&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;3JR5.A&#39;, &#39;@rank&#39;: &#39;5&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;3SAU.A&#39;, &#39;@rank&#39;: &#39;6&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;3GQ4.A&#39;, &#39;@rank&#39;: &#39;7&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;1R2Z.A&#39;, &#39;@rank&#39;: &#39;8&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;3U6E.A&#39;, &#39;@rank&#39;: &#39;9&#39;},</span>
+<span class="go"> {&#39;@name&#39;: &#39;2XZF.A&#39;, &#39;@rank&#39;: &#39;10&#39;}]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.make_query">
+<code class="descclassname">pypdb.</code><code class="descname">make_query</code><span class="sig-paren">(</span><em>search_term</em>, <em>querytype='AdvancedKeywordQuery'</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.make_query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Repackage strings into a search dictionary</p>
+<p>This function takes a list of search terms and specifications
+and repackages it as a dictionary object that can be used to conduct a search</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>search_term</strong> : str</p>
+<blockquote>
+<div><p>The specific term to search in the database. For specific query types,
+the strings that will yield valid results are limited to:</p>
+<p>&#8216;HoldingsQuery&#8217; : A Ggeneral search of the metadata associated with PDB IDs</p>
+<p>&#8216;ExpTypeQuery&#8217; : Experimental Method such as &#8216;X-RAY&#8217;, &#8216;SOLID-STATE NMR&#8217;, etc</p>
+<p>&#8216;AdvancedKeywordQuery&#8217; : Any string that appears in the title or abstract</p>
+<p>&#8216;StructureIdQuery&#8217; :  Perform a search for a specific Structure ID</p>
+<p>&#8216;ModifiedStructuresQuery&#8217; : Search for related structures</p>
+<p>&#8216;AdvancedAuthorQuery&#8217; : Search by the names of authors associated with entries</p>
+<p>&#8216;MotifQuery&#8217; : Search for a specific motif</p>
+<p>&#8216;NoLigandQuery&#8217; : Find full list of PDB IDs without free ligrands</p>
+</div></blockquote>
+<p><strong>querytype</strong> : str</p>
+<blockquote>
+<div><p>The type of query to perform, the easiest is an AdvancedKeywordQuery but more
+specific types of searches may also be performed</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>scan_params</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary representing the query</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="n">make_query</span><span class="p">(</span><span class="s">&#39;actin network&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="go">{&#39;orgPdbQuery&#39;: {&#39;description&#39;: &#39;Text Search for: actin&#39;,</span>
+<span class="go">&#39;keywords&#39;: &#39;actin&#39;,</span>
+<span class="go">&#39;queryType&#39;: &#39;AdvancedKeywordQuery&#39;}}</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">search_dict</span> <span class="o">=</span> <span class="n">make_query</span><span class="p">(</span><span class="s">&#39;actin network&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">found_pdbs</span> <span class="o">=</span> <span class="n">do_search</span><span class="p">(</span><span class="n">search_dict</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">found_pdbs</span><span class="p">)</span>
+<span class="go">[&#39;1D7M&#39;, &#39;3W3D&#39;, &#39;4A7H&#39;, &#39;4A7L&#39;, &#39;4A7N&#39;]</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">search_dict</span> <span class="o">=</span> <span class="n">make_query</span><span class="p">(</span><span class="s">&#39;T[AG]AGGY&#39;</span><span class="p">,</span><span class="n">querytype</span><span class="o">=</span><span class="s">&#39;MotifQuery&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">found_pdbs</span> <span class="o">=</span> <span class="n">do_search</span><span class="p">(</span><span class="n">search_dict</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">found_pdbs</span><span class="p">)</span>
+<span class="go">[&#39;3LEZ&#39;, &#39;3SGH&#39;, &#39;4F47&#39;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.parse_blast">
+<code class="descclassname">pypdb.</code><code class="descname">parse_blast</code><span class="sig-paren">(</span><em>blast_string</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.parse_blast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clean up HTML BLAST results</p>
+<p>This function requires BeautifulSoup and the re module
+It goes throught the complicated output returned by the BLAST
+search and provides a list of matches, as well as the raw 
+text file showing the alignments for each of the matches.</p>
+<p>get_blast() uses this function internally</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>blast_string</strong> : str</p>
+<blockquote>
+<div><p>A complete webpage of standard BLAST results</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : 2-tuple</p>
+<blockquote class="last">
+<div><p>A tuple consisting of a list of PDB matches, and a list
+of their alignment text files (unformatted)</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.remove_at_sign">
+<code class="descclassname">pypdb.</code><code class="descname">remove_at_sign</code><span class="sig-paren">(</span><em>kk</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.remove_at_sign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove the &#8216;&#64;&#8217; character from the beginning of key names in a dict()</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>kk</strong> : dict</p>
+<blockquote>
+<div><p>A dictionary containing keys with the &#64; character
+(this pops up a lot in converted XML)</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>kk</strong> : dict (modified in place)</p>
+<blockquote class="last">
+<div><p>A dictionary where the &#64; character has been removed</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.remove_dupes">
+<code class="descclassname">pypdb.</code><code class="descname">remove_dupes</code><span class="sig-paren">(</span><em>list_with_dupes</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.remove_dupes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove duplicate entries from a list while preserving order</p>
+<p>This function uses Python&#8217;s standard equivalence testing methods in
+order to determine if two elements of a list are identical. So if in the list [a,b,c]
+the condition a == b is True, then regardless of whether a and b are strings, ints, 
+or other, then b will be removed from the list: [a, c]</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>list_with_dupes</strong> : list</p>
+<blockquote>
+<div><p>A list containing duplicate elements</p>
+</div></blockquote>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : list</p>
+<blockquote class="last">
+<div><p>The list with the duplicate entries removed by the order preserved</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Examples</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span><span class="p">(</span><span class="n">remove_dupes</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="go">[1,3,2,4]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="pypdb.to_dict">
+<code class="descclassname">pypdb.</code><code class="descname">to_dict</code><span class="sig-paren">(</span><em>odict</em><span class="sig-paren">)</span><a class="headerlink" href="#pypdb.to_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert OrderedDict to dict</p>
+<p>Takes a nested, OrderedDict() object and outputs a 
+normal dictionary of the lowest-level key:val pairs</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><p class="first"><strong>odict</strong> : OrderedDict</p>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><strong>out</strong> : dict</p>
+<blockquote class="last">
+<div><p>A dictionary corresponding to the flattened form of 
+the inputs OrderedDict</p>
+</div></blockquote>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span>Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span>Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span>Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to PyPDB&#8217;s documentation!</a><ul>
+<li><a class="reference internal" href="#pypdb-a-python-api-for-the-rcsb-protein-data-bank">PyPDB: A Python API for the RCSB Protein Data Bank</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h4>Next topic</h4>
+  <p class="topless"><a href="pypdb.html"
+                        title="next chapter">pypdb module</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2015, William Gilpin.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.3.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.3</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a></li>
+    </div>
+
+    
+
+    
+  </body>
+</html>
