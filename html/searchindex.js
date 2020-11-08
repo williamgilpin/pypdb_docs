@@ -1,1 +1,0 @@
-Search.setIndex({envversion:46,filenames:["index","modules","pypdb"],objects:{},objnames:{},objtypes:{},terms:{content:0,index:0,modul:[0,1],page:0,search:0},titles:["Welcome to PyPDB&#8217;s documentation!","pypdb","pypdb module"],titleterms:{document:0,indic:0,modul:2,pypdb:[0,1,2],tabl:0,welcom:0}})
